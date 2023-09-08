@@ -7,9 +7,9 @@ metadata:
 spec:
   # NOTE: depending on which version of the book you have, this may say port 9999. The latest version of the book uses 8888 to match the pod.
   ports:
-  - port: 8888
+  - port: 8888 # 서비스가 port를 
     protocol: TCP
-    targetPort: 8888
-  selector:
+    targetPort: 8888 # 파드의 targetPort로 포워딩
+  selector: # 서비스에 라우팅할 파드. 파드가 여러 개 있는 경우 서비스는 무작위로 요청 전달
     app: demo
   type: ClusterIP
